@@ -1,41 +1,51 @@
 <script>
-import { store } from '../store'
+import { store } from "../store";
 
 export default {
     data() {
         return {
             store,
-        }
+        };
     },
+
     methods: {
+        emitSearchBar() {
+            this.$emit("performSearch");
+        },
     },
 };
 </script>
 
 <template>
-    <nav>
-        <h1>Boolean Streaming</h1>
-
-        <div class="btns">
-            <input type="text" @keyup.enter="$emit('performSearch')" v-model="store.searchBar">
-            <button>Cerca</button>
+    <header>
+        <div class="flex_container">
+            <h1>BOOLFLIX</h1>
+            <div class="search">
+                <input type="text" placeholder="Cerca Film o SerieTV" v-model="store.SearchBar"
+                    @keyup.enter="emitSearchBar" />
+                <button @click="emitSearchBar">CERCA</button>
+            </div>
         </div>
-    </nav>
+    </header>
 </template>
 
 <style lang="scss" scoped>
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-nav {
+.flex_container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    height: 4rem;
+    height: 5rem;
+    padding-inline: 2rem;
     background-color: black;
-    color: white;
+
+    h1 {
+        color: red;
+    }
+
+    .search {
+        input {
+            margin-right: 1rem;
+        }
+    }
 }
 </style>

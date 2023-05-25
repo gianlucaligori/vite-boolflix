@@ -1,7 +1,7 @@
-import { reactive } from 'vue'
-// import axios from 'axios'
+import { reactive } from "vue";
 
 export const store = reactive({
-    movieList: [],
-    searchBar: "",
+  ArrMovies: [],
+  ArrTvSeries: [],
+  SearchBar: "",
 });
