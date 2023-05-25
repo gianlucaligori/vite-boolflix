@@ -25,7 +25,7 @@ export default {
 
     RequestMoviesFromApi() {
       axios
-        .get('https://api.themoviedb.org/3/search/movie?api_key=21df2f399925b36ce74442455c67fc8a&query=all',)
+        .get('https://api.themoviedb.org/3/search/movie?api_key=21df2f399925b36ce74442455c67fc8a&query=all')
         .then(response => (this.store.movieList = response.data.results));
     }
   },
@@ -42,4 +42,10 @@ export default {
   <AppMain />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+</style>
