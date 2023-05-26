@@ -37,9 +37,10 @@ export default {
 
 <style lang="scss" scoped>
 .main_container {
+    display: flex;
+    color: antiquewhite;
     background-color: rgb(36, 36, 36);
     padding-top: 5rem;
-    height: 100vh;
 
 }
 </style>
