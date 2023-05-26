@@ -80,7 +80,7 @@ export default {
       <div v-for="(movie, index) in store.ArrMovies" :key="index" class="movie">
         <div>
           <div>
-            <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" :alt="poster_path">
+            <img v-if="movie.poster_path" :src="`http://image.tmdb.org/t/p/w342${movie.poster_path}`" alt="">
             <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
 
 
@@ -115,7 +115,7 @@ export default {
       <div v-for="(serie, index) in store.ArrTvSeries" :key="index" class="tvseries">
         <div class="card">
 
-          <img v-if="poster_path" :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" alt="">
+          <img v-if="serie.poster_path" :src="`https://image.tmdb.org/t/p/w342${serie.poster_path}`" alt="">
           <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
 
           <h3>
@@ -131,7 +131,7 @@ export default {
             <img :src="languageImage(serie.original_language)" alt="">
           </div>
 
-          <p>{{ serie.vote_average }}</p>
+          <p> {{ convertToStars(serie.vote_average) }}</p>
 
         </div>
       </div>
