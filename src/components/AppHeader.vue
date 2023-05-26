@@ -10,7 +10,7 @@ export default {
 
     methods: {
         emitSearchBar() {
-            this.$emit("performSearch");
+            this.$emit("searchPerformed");
         },
     },
 };
