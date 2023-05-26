@@ -42,8 +42,8 @@ export default {
 
     props: {
         poster_path: String,
-        name: String,
-        original_name: String,
+        title: String,
+        original_title: String,
         original_language: String,
         vote_average: Number,
     },
@@ -57,14 +57,13 @@ export default {
             <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
         </div>
         <div>
-            <p>{{ name }}</p>
+            <p>{{ title }}</p>
         </div>
         <div>
-            {{ original_name }}
+            {{ original_title }}
         </div>
-        <div>
-            {{ languageImage(original_language) }}
-        </div>
+        <img :src="languageImage(original_language)" alt="">
+
         <div>
             {{ convertiVotiStars(vote_average) }}
         </div>

@@ -26,8 +26,7 @@ export default {
             <div class="search">
                 <input type="text" placeholder="Cerca Film o SerieTV" v-model="store.SearchBar"
                     @keyup.enter="emitSearchBar" />
-
-                <button>CERCA</button>
+                <button @click="emitSearchBar">CERCA</button>
             </div>
         </nav>
     </header>
