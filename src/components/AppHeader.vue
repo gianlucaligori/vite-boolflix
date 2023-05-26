@@ -10,7 +10,7 @@ export default {
 
     methods: {
         emitSearchBar() {
-            this.$emit("searchPerformed");
+            this.$emit('searchPerformed');
         },
     },
 };
@@ -18,14 +18,18 @@ export default {
 
 <template>
     <header>
-        <div class="flex_container">
-            <h1>BOOLFLIX</h1>
+        <nav>
+            <div>
+                <h1>BOOLFLIX</h1>
+            </div>
+
             <div class="search">
                 <input type="text" placeholder="Cerca Film o SerieTV" v-model="store.SearchBar"
                     @keyup.enter="emitSearchBar" />
-                <button @click="emitSearchBar">CERCA</button>
+
+                <button>CERCA</button>
             </div>
-        </div>
+        </nav>
     </header>
 </template>
 
