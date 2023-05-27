@@ -53,24 +53,9 @@ export default {
 <template>
     <div class="movies">
 
-        <!-- <div class="movie_info">
-
-
-                                            <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
-                                            <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
-
-                                            <p>{{ title }}</p>
-                                            <p>{{ original_title }}</p>
-
-                                            <img :src="languageImage(original_language)" alt="">
-
-                                            <p>{{ convertiVotiStars(vote_average) }}</p>
-                                        </div> -->
-
-
-
         <div class="card">
             <img class="poster" v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
+
             <div class="card-content">
 
                 <div class="info_card">
@@ -96,14 +81,16 @@ export default {
 $color-primary-white: rgb(240, 240, 240);
 
 .card {
-    width: 24rem;
-    height: 36rem;
+    width: 400px;
+    height: 600px;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
     color: $color-primary-white;
-    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.9);
+    margin-bottom: 3rem;
+    margin-inline: 3rem;
 
     .poster {
         position: absolute;
@@ -114,16 +101,6 @@ $color-primary-white: rgb(240, 240, 240);
         left: 0;
         opacity: 0.9;
         transition: opacity .2s ease-out;
-    }
-
-    h2 {
-        position: absolute;
-        inset: auto auto 30px 30px;
-        margin: 0;
-        transition: inset .3s .3s ease-out;
-        font-family: 'Roboto Condensed', sans-serif;
-        font-weight: normal;
-        text-transform: uppercase;
     }
 
     .info_card {
@@ -142,7 +119,7 @@ $color-primary-white: rgb(240, 240, 240);
 
     &:hover .info_card {
         opacity: 1;
-        transition: opacity .1s .1s ease-in;
+        transition: opacity .5s .2s ease-in;
     }
 
     &:hover .poster {
@@ -159,9 +136,5 @@ $color-primary-white: rgb(240, 240, 240);
 p {
     padding-bottom: 1rem;
     font-size: 1.5rem;
-}
-
-.movies {
-    margin-inline: 4rem;
 }
 </style>

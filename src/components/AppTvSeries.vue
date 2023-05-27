@@ -52,16 +52,21 @@ export default {
 
 <template>
     <div class="serieTv">
-        <div class="serie_info">
-            <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
-            <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
+        <div class="card">
+            <img class="poster" v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
 
-            <p>{{ name }}</p>
-            <p>{{ original_name }}</p>
+            <div class="card-content">
 
-            <img :src="languageImage(original_language)" alt="">
+                <div class="info_card">
+                    <p>{{ name }}</p>
+                    <p>{{ original_name }}</p>
 
-            <p>{{ convertiVotiStars(vote_average) }}</p>
+                    <img :src="languageImage(original_language)" alt="">
+
+                    <p>{{ convertiVotiStars(vote_average) }}</p>
+                </div>
+
+            </div>
         </div>
 
     </div>
@@ -69,11 +74,64 @@ export default {
 
 
 <style lang="scss" scoped>
-p {
-    padding-top: .7rem;
+$color-primary-white: rgb(240, 240, 240);
+
+.card {
+    width: 400px;
+    height: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: $color-primary-white;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.9);
+    margin-bottom: 3rem;
+    margin-inline: 3rem;
+
+
+    .poster {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+        transition: opacity .2s ease-out;
+    }
+
+    .info_card {
+        position: absolute;
+        opacity: 0;
+        max-width: 80%;
+        transition: opacity .3s ease-out;
+    }
+
+    .info_card {
+        inset: auto auto 80px 30px;
+    }
+
+
+
+
+    &:hover .info_card {
+        opacity: 1;
+        transition: opacity .5s .2s ease-in;
+    }
+
+    &:hover .poster {
+        transition: opacity .1s ease-in;
+        opacity: .2;
+    }
+
 }
 
-.serieTv {
-    margin-inline: 4rem;
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
+p {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
 }
 </style>

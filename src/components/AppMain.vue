@@ -35,7 +35,7 @@ export default {
 
         <div class="series_container">
 
-            <h2></h2>
+            <h2>SERIE TV</h2>
 
 
             <div class="series">
@@ -66,12 +66,12 @@ h2 {
 .movie_container,
 .series_container {
     overflow-y: auto;
+    padding-top: 4rem;
 
 }
 
 .movies,
 .series {
     display: flex;
-    margin-inline: 3rem;
 }
 </style>
