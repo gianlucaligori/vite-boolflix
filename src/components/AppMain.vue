@@ -35,7 +35,7 @@ export default {
 
         <div class="series_container">
 
-            <h2>SERIE TV</h2>
+            <h2></h2>
 
 
             <div class="series">
@@ -52,8 +52,8 @@ export default {
 
 <style lang="scss" scoped>
 h2 {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     font-size: 3rem;
     margin-left: 4rem;
 }
@@ -72,5 +72,6 @@ h2 {
 .movies,
 .series {
     display: flex;
+    margin-inline: 3rem;
 }
 </style>

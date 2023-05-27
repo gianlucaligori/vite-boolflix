@@ -53,27 +53,112 @@ export default {
 <template>
     <div class="movies">
 
-        <div class="movie_info">
+        <!-- <div class="movie_info">
 
 
-            <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
-            <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
+                                            <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
+                                            <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
 
-            <p>{{ title }}</p>
-            <p>{{ original_title }}</p>
+                                            <p>{{ title }}</p>
+                                            <p>{{ original_title }}</p>
 
-            <img :src="languageImage(original_language)" alt="">
+                                            <img :src="languageImage(original_language)" alt="">
 
-            <p>{{ convertiVotiStars(vote_average) }}</p>
+                                            <p>{{ convertiVotiStars(vote_average) }}</p>
+                                        </div> -->
+
+
+
+        <div class="card">
+            <img class="poster" v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
+            <div class="card-content">
+
+                <div class="info_card">
+                    <p>{{ title }}</p>
+                    <p>{{ original_title }}</p>
+
+                    <img :src="languageImage(original_language)" alt="">
+
+                    <p>{{ convertiVotiStars(vote_average) }}</p>
+                </div>
+
+            </div>
         </div>
+
+
+
 
     </div>
 </template>
 
 
 <style lang="scss" scoped>
+$color-primary-white: rgb(240, 240, 240);
+
+.card {
+    width: 24rem;
+    height: 36rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: $color-primary-white;
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+
+    .poster {
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.9;
+        transition: opacity .2s ease-out;
+    }
+
+    h2 {
+        position: absolute;
+        inset: auto auto 30px 30px;
+        margin: 0;
+        transition: inset .3s .3s ease-out;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+
+    .info_card {
+        position: absolute;
+        opacity: 0;
+        max-width: 80%;
+        transition: opacity .3s ease-out;
+    }
+
+    .info_card {
+        inset: auto auto 80px 30px;
+    }
+
+
+
+
+    &:hover .info_card {
+        opacity: 1;
+        transition: opacity .1s .1s ease-in;
+    }
+
+    &:hover .poster {
+        transition: opacity .1s ease-in;
+        opacity: .2;
+    }
+
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
+
 p {
-    padding-top: .7rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
 }
 
 .movies {
