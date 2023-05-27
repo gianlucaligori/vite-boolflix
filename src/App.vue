@@ -64,16 +64,5 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
-
-
-nav {
-  height: 7rem;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: black;
-  color: red;
-}
 </style>
 

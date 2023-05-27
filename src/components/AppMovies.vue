@@ -52,39 +52,31 @@ export default {
 
 <template>
     <div class="movies">
-        <div>
+
+        <div class="movie_info">
+
+
             <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
             <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
-        </div>
-        <div>
-            <p>{{ title }}</p>
-        </div>
-        <div>
-            {{ original_title }}
-        </div>
-        <img :src="languageImage(original_language)" alt="">
 
-        <div>
-            {{ convertiVotiStars(vote_average) }}
+            <p>{{ title }}</p>
+            <p>{{ original_title }}</p>
+
+            <img :src="languageImage(original_language)" alt="">
+
+            <p>{{ convertiVotiStars(vote_average) }}</p>
         </div>
+
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.movie_containe {
-    gap: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    color: white;
+p {
+    padding-top: .7rem;
 }
 
-.movie {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    border: 1px solid black;
+.movies {
+    margin-inline: 4rem;
 }
 </style>

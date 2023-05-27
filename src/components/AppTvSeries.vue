@@ -52,40 +52,28 @@ export default {
 
 <template>
     <div class="serieTv">
-        <div>
+        <div class="serie_info">
             <img v-if="poster_path" :src="`http://image.tmdb.org/t/p/w342${poster_path}`" alt="">
             <img v-else src="./ assets / img / Non - disponibile - _04.jpg" alt="">
-        </div>
-        <div>
+
             <p>{{ name }}</p>
+            <p>{{ original_name }}</p>
+
+            <img :src="languageImage(original_language)" alt="">
+
+            <p>{{ convertiVotiStars(vote_average) }}</p>
         </div>
-        <div>
-            {{ original_name }}
-        </div>
-        <div>
-            {{ languageImage(original_language) }}
-        </div>
-        <div>
-            {{ convertiVotiStars(vote_average) }}
-        </div>
+
     </div>
 </template>
 
 
 <style lang="scss" scoped>
-.serie_container {
-    gap: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    color: white;
+p {
+    padding-top: .7rem;
 }
 
-.tvseries {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    border: 1px solid black;
+.serieTv {
+    margin-inline: 4rem;
 }
 </style>

@@ -33,22 +33,28 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.flex_container {
+nav {
+    height: 7rem;
+    padding: 2rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 5rem;
-    padding-inline: 2rem;
+    justify-content: space-between;
     background-color: black;
+    color: red;
+}
 
-    h1 {
-        color: red;
-    }
+h1 {
+    color: red;
+    font-size: 3rem;
+}
 
-    .search {
-        input {
-            margin-right: 1rem;
-        }
+.search {
+
+
+    input,
+    button {
+        margin-right: 1rem;
+        font-size: 2rem;
     }
 }
 </style>
